@@ -89,7 +89,7 @@ class Base:
             with open(filename, "r") as jsonfile:
                 list_dicts = Base.from_json_string(jsonfile.read())
                 return [cls.create(**d) for d in list_dicts]
-        except IOError:
+        except OSError:
             return []
 
     @classmethod
@@ -130,7 +130,7 @@ class Base:
                 list_dicts = [dict([k, int(v)] for k, v in d.items())
                               for d in list_dicts]
                 return [cls.create(**d) for d in list_dicts]
-        except IOError:
+        except OSError:
             return []
 
     @staticmethod
