@@ -1,5 +1,5 @@
 $(function () {
-  $.get('https://swapi.co/api/films/?format=json', function (resp, status) {
+  $.get('https://swapi-api.alx-tools.com/api/films/?format=json', function (resp, status) {
     if (status === 'success') {
       let films = resp.results;
       for (let idx in films) {
